@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+    <a href="#" class="btn-prev">Prev</a> | 
+    <a href="#" class="btn-next">Next</a>
+    
+    <script type="text/javascript" src="http://alan_martini.jit.su/socket.io/socket.io.js'"></script>
+    <script>
+        var socket, next, prev, body, dragStart, dragStop;
+
+        socket = io.connect('http://alan_martini.jit.su/');
+        next   = document.querySelector('.btn-next');
+        prev   = document.querySelector('.btn-prev');
+        body   = document.querySelector('body');
+
+        next.addEventListener('click', function(e) {
+            socket.emit('next');
+
+            console.log('Hit next');
+        });
+
+        prev.addEventListener('click', function(e) {
+            socket.emit('prev');
+
+            console.log('Hit prev');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "TesteApresentacao",
+  "subdomain": "alan_martini",
+  "scripts": {
+    "start": "app.js"
+  },
+  "version": "0.1.0",
+  "engines": {
+    "node": "0.8.x"
+  }
+}
